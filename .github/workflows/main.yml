@@ -18,11 +18,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.13
+          python-version: 3.11
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install pytest pytest-cov
 
       - name: Run tests with coverage
         run: |
@@ -31,4 +31,5 @@ jobs:
       - name: Pytest coverage comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
-          pytest-xml-coverage-path: ./coverage.xml
+          pytest-coverage-path: ./pytest-coverage.txt
+          junitxml-path: ./pytest.xml
