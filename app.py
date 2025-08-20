@@ -10,6 +10,7 @@ movimentacoes = []
 # Rotas
 # ------------------------
 
+
 @app.route("/movimentacoes", methods=["POST"])
 def criar_movimentacao():
     data = request.get_json()
