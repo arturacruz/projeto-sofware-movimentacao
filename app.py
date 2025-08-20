@@ -6,6 +6,7 @@ app = Flask(__name__)
 # "Banco de dados" em memória
 movimentacoes = []
 
+
 # ------------------------
 # Rotas
 # ------------------------
