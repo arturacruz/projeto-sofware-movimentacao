@@ -6,11 +6,9 @@ app = Flask(__name__)
 # "Banco de dados" em memória
 movimentacoes = []
 
-
 # ------------------------
 # Rotas
 # ------------------------
-
 
 @app.route("/movimentacoes", methods=["POST"])
 def criar_movimentacao():
