@@ -31,16 +31,16 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: arturacruz/movimentacao-ci:${{ github.sha }}
+          tags: k1llm3pl5/movimentacao-ci:${{ github.sha }}
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST_TEST }}
+          host: ${{ secrets.HOST_IP }}
           username: "ubuntu"
-          key: ${{ secrets.KEY_TEST }}
+          key: ${{ secrets.HOST_KEY }}
           port: 22
           script: |
             docker stop stocks
             docker rm --force stocks
-            docker run -d -p 8080:8080 --name movimentacao arturacruz/movimentacao-ci:${{ github.sha }}
+            docker run -d -p 8080:8080 --name movimentacao k1llm3pl5/movimentacao-ci:${{ github.sha }}
