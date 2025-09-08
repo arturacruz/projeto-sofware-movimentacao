@@ -1,3 +1,3 @@
-FROM buildpack-deps:bookworm
+FROM python:bookworm
 
 ENTRYPOINT ["python", "app.py"]
