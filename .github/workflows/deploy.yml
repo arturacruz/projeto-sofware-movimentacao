@@ -41,6 +41,6 @@ jobs:
           key: ${{ secrets.HOST_KEY }}
           port: 22
           script: |
-            docker stop stocks
-            docker rm --force stocks
+            docker stop movimentacao
+            docker rm --force movimentacao
             docker run -d -p 8080:8080 --name movimentacao k1llm3pl5/movimentacao-ci:${{ github.sha }}
